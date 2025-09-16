@@ -218,6 +218,16 @@ class ListeSimpleTest {
     }
 
     @Test
+    void echanger2NoeudsIdentiques() {
+       listeATester.ajout(5);
+       Noeud r1 = listeATester.tete;
+       Noeud r2 = listeATester.tete;
+       assertEquals("ListeSimple(Noeud(5))", listeATester.toString());
+       listeATester.echanger(r1, r2);
+       assertEquals("ListeSimple(Noeud(5))", listeATester.toString());
+   }
+
+    @Test
      void echangerLePremierNoeudAvecUnAutre() {
         listeATester.ajout(5);
         listeATester.ajout(4);
