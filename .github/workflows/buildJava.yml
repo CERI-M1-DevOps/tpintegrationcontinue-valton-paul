@@ -6,18 +6,19 @@ on:
     branches: main
 
 jobs:
-  name: Build
-  runs-on: ubuntu-latest
-  steps:
-    - name: checkout
-      uses: actions/checkout@v4
+  Build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
 
-    - name: setup
-      uses: actions/setup-java@v5
-      with:
-        distribution: 'corretto'
-        java-version: '21'
-      run: java HelloWorldApp.java
+      - name: setup
+        uses: actions/setup-java@v5
+        with:
+          distribution: 'corretto'
+          java-version: '21'
+        run: java HelloWorldApp.java
 
-    - name: test
-      run: mvn –B packages
+      - name: test
+        run: mvn –B packages
