@@ -21,7 +21,7 @@ jobs:
         with:
           distribution: 'corretto'
           java-version: '21'
-        key: java
+          key: java
       - name: test
         env: 
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
