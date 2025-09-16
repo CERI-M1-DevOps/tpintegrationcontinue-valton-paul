@@ -54,6 +54,13 @@ class ListeSimpleTest {
     }
 
     @Test
+    void modifiePremier2() {
+       listeATester.ajout(3);
+       listeATester.modifiePremier(2, 4);
+       assertEquals("ListeSimple(Noeud(3)", listeATester.toString());
+   }
+
+    @Test
      void modifieTous() {
         listeATester.ajout(1);
         listeATester.ajout(2);
