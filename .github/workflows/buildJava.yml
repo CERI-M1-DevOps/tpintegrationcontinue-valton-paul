@@ -12,16 +12,18 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
-      - name: setup java
+      - name: Cache local Maven repository
         uses: actions/cache@v4
         with:
-          key: java
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
       - name: setup java
         uses: actions/setup-java@v4
         with:
           distribution: 'corretto'
           java-version: '21'
-          key: java
       - name: test
         env: 
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
