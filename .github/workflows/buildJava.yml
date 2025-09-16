@@ -20,4 +20,4 @@ jobs:
           java-version: '21'
 
       - name: test
-        run: mvn –B packages
+        run: mvn –B package
