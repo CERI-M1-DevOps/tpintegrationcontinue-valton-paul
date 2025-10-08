@@ -21,6 +21,12 @@ public class ListeSimple {
             courant.setElement(nouvelleValeur);
     }
 
+    /**
+    *   Permet de changer tous les éléments choisient par un nouvel éléments
+    *   @param element éléments à modifier dans la liste
+    *   @param nouvelleValeur valeur qui va remplacer éléments
+    *   @return void
+    */
     public void modifieTous(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
         while (courant != null) {
@@ -94,6 +100,10 @@ public class ListeSimple {
         }
     }
 
+    /**
+    *   Permet d'inverser le rangement de la liste 
+    *   @return void
+    */
     public void inverser() {
         Noeud precedent = null;
         Noeud courant = tete;
