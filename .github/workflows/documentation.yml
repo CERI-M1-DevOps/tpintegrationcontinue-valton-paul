@@ -1,0 +1,16 @@
+name: Java Documentation
+
+on: 
+  pull_request:
+   types:
+    - closed
+
+jobs:
+  if_merged:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+    - name:
+      run: |
+        mvn -B javadoc::javadoc && peaceiris/actions-gh-pages@v4
+        peaceiris/actions-gh-pages@v4
