@@ -17,9 +17,6 @@ jobs:
       uses: actions/checkout@v4
     - name: setup java
       uses: actions/setup-java@v4
-      with:
-        distribution: 'corretto'
-        java-version: '21'
     - name: Generation doc
       run: mvn -B javadoc::javadoc
     - name: Pages
