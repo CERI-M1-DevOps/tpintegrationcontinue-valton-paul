@@ -10,6 +10,8 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
+    - name: checkout
+      uses: actions/checkout@v4
     - name: Generation doc
       run: |
         mvn -B javadoc::javadoc && peaceiris/actions-gh-pages@v4
