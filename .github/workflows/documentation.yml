@@ -6,7 +6,7 @@ on:
     - closed
 
 permissions:
-  contents: write
+  content: write
 
 jobs:
   if_merged:
@@ -21,6 +21,6 @@ jobs:
         distribution: 'corretto'
         java-version: '21'
     - name: Generation doc
-      run: mvn -B javadoc::javadoc && peaceiris/actions-gh-pages@v4
-    - name: Pages
-      run: peaceiris/actions-gh-pages@v4
+      run: |
+        mvn -B javadoc::javadoc
+        peaceiris/actions-gh-pages@v4
